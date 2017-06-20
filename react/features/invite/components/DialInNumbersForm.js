@@ -1,4 +1,4 @@
-import { StatelessDropdownMenu } from '@atlaskit/dropdown-menu';
+import { DropdownMenuStateless } from '@atlaskit/dropdown-menu';
 import ExpandIcon from '@atlaskit/icon/glyph/expand';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -172,7 +172,7 @@ class DialInNumbersForm extends Component {
     }
 
     /**
-     * Creates a {@code StatelessDropdownMenu} instance.
+     * Creates a {@code DropdownMenuStateless} instance.
      *
      * @param {Array} items - The content to display within the dropdown.
      * @param {string} triggerText - The text to display within the
@@ -181,14 +181,14 @@ class DialInNumbersForm extends Component {
      */
     _createDropdownMenu(items, triggerText) {
         return (
-            <StatelessDropdownMenu
+            <DropdownMenuStateless
                 isOpen = { this.state.isDropdownOpen }
                 items = { [ { items } ] }
                 onItemActivated = { this._onSelect }
                 onOpenChange = { this._onOpenChange }
                 shouldFitContainer = { true }>
                 { this._createDropdownTrigger(triggerText) }
-            </StatelessDropdownMenu>
+            </DropdownMenuStateless>
         );
     }
 
@@ -220,7 +220,7 @@ class DialInNumbersForm extends Component {
      * Detects whether the response from dialInNumbersUrl returned an array or
      * an object with dial-in numbers and calls the appropriate method to
      * transform the numbers into the format expected by
-     * {@code StatelessDropdownMenu}.
+     * {@code DropdownMenuStateless}.
      *
      * @param {Array<string>|Object} dialInNumbers - The numbers returned from
      * requesting dialInNumbersUrl.
@@ -237,7 +237,7 @@ class DialInNumbersForm extends Component {
 
     /**
      * Transforms the passed in numbers array into an array of objects that can
-     * be parsed by {@code StatelessDropdownMenu}.
+     * be parsed by {@code DropdownMenuStateless}.
      *
      * @param {Array<string>} dialInNumbers - An array with dial-in numbers to
      * display and copy.
@@ -255,7 +255,7 @@ class DialInNumbersForm extends Component {
 
     /**
      * Transforms the passed in numbers object into an array of objects that can
-     * be parsed by {@code StatelessDropdownMenu}.
+     * be parsed by {@code DropdownMenuStateless}.
      *
      * @param {Object} dialInNumbers - The numbers object to parse. The
      * expected format is an object with keys being the name of the country

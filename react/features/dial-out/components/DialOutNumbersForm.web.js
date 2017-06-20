@@ -1,4 +1,4 @@
-import { StatelessDropdownMenu } from '@atlaskit/dropdown-menu';
+import { DropdownMenuStateless } from '@atlaskit/dropdown-menu';
 import ExpandIcon from '@atlaskit/icon/glyph/expand';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -146,12 +146,11 @@ class DialOutNumbersForm extends Component {
      */
     render() {
         const { t, _dialOutCodes } = this.props;
-        const items
-            = _dialOutCodes ? this._formatCountryCodes(_dialOutCodes) : [];
 
         return (
             <div className = 'form-control'>
-                { this._createDropdownMenu(items) }
+                { _dialOutCodes ? this._createDropdownMenu(
+                        this._formatCountryCodes(_dialOutCodes)) : '' }
                 <div className = 'dial-out-input'>
                     <input
                         autoFocus = { true }
@@ -166,7 +165,7 @@ class DialOutNumbersForm extends Component {
     }
 
     /**
-     * Creates a {@code StatelessDropdownMenu} instance.
+     * Creates a {@code DropdownMenuStateless} instance.
      *
      * @param {Array} items - The content to display within the dropdown.
      * @returns {ReactElement}
@@ -175,14 +174,14 @@ class DialOutNumbersForm extends Component {
         const { code, dialCode } = this.state.selectedCountry;
 
         return (
-            <StatelessDropdownMenu
+            <DropdownMenuStateless
                 isOpen = { this.state.isDropdownOpen }
                 items = { [ { items } ] }
                 onItemActivated = { this._onSelect }
                 onOpenChange = { this._onOpenChange }
                 shouldFitContainer = { true }>
                 { this._createDropdownTrigger(dialCode, code) }
-            </StatelessDropdownMenu>
+            </DropdownMenuStateless>
         );
     }
 
