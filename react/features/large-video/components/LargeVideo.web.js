@@ -37,17 +37,19 @@ export default class LargeVideo extends Component {
                         src = '' />
                 </div>
                 <span id = 'remoteConnectionMessage' />
-                <div className = 'video_blurred_container'>
-                    <video
-                        autoPlay = { true }
-                        id = 'largeVideoBackground'
-                        muted = 'true' />
-                </div>
-                <div id = 'largeVideoWrapper'>
-                    <video
-                        autoPlay = { true }
-                        id = 'largeVideo'
-                        muted = { true } />
+                <div>
+                    <div className = 'video_blurred_container'>
+                        <video
+                            autoPlay = { true }
+                            id = 'largeVideoBackground'
+                            muted = 'true' />
+                    </div>
+                    <div id = 'largeVideoWrapper'>
+                        <video
+                            autoPlay = { true }
+                            id = 'largeVideo'
+                            muted = { true } />
+                    </div>
                 </div>
                 <span id = 'localConnectionMessage' />
 
